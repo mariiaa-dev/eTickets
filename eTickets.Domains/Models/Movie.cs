@@ -1,0 +1,31 @@
+﻿using eTickets.LocalStorage.LocalStorage;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace eTickets.Domains.Models
+{
+    public class Movie
+    {
+        [Key]
+        public int Id { get; set; }
+
+        public string? Name { get; set; }
+        public string? Description { get; set; }
+        public double Price { get; set; }
+        public string? ImageURL { get; set; }
+        public DateTime DateStart { get; set; }
+        public DateTime DateEnd { get; set; }
+        public Genre Genre { get; set; }
+
+        //Relationship
+        public IList<ActorMovie>? ActorMovies { get; set; }
+
+        public int CinemaId { get; set; }
+        [ForeignKey("CinemaId")]
+        public Cinema? Cinema { get; set;}
+
+        public int ProducerId { get; set; }
+        [ForeignKey("ProducerId")]
+        public Producer? Producer { get; set; }
+    }
+}
