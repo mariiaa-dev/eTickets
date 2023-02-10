@@ -1,7 +1,6 @@
 ﻿using eTickets.Domains.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System.Reflection.Emit;
 
 namespace eTickets.Persistence.ModelTypeConfigurations
 {

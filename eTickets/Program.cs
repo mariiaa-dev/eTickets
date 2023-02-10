@@ -2,7 +2,8 @@ using eTickets.Persistence.DependencyInjections;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddPersistence(builder.Configuration);
+var path = Directory.GetCurrentDirectory() + "\\" + "appsettings.json";
+builder.Services.AddPersistence(path);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

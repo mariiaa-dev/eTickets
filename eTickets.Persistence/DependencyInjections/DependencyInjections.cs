@@ -7,15 +7,14 @@ namespace eTickets.Persistence.DependencyInjections
 {
     public static class DependencyInjections
     {
-        public static IServiceCollection AddPersistence(this IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection AddPersistence(this IServiceCollection services, string path)
         {
             var builder = new ConfigurationBuilder();
 
-            var path = "C:\\Users\\User\\source\\repos\\eTickets\\eTickets\\appsettings.json";
             builder.AddJsonFile(path);
-            configuration = builder.Build();
+            var config = builder.Build();
 
-            services.AddDbContext<AppDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<AppDbContext>(options => options.UseSqlServer(config.GetConnectionString("DefaultConnection")));
 
             return services;
         }
