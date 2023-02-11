@@ -1,5 +1,6 @@
 ﻿using eTickets.Application.Context;
 using eTickets.Domains.Models;
+using eTickets.Seed.Storage;
 
 namespace eTickets.Initializer.Initializer
 {
@@ -10,7 +11,7 @@ namespace eTickets.Initializer.Initializer
         {
             _context = context;
         }
-
+        //TODO: Fix bugs
         public void Initialize()
         {
             if (!_context.Cinemas.Any())

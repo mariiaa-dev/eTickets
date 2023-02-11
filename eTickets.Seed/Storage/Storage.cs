@@ -43,19 +43,19 @@ namespace eTickets.Seed.Storage
             }
             else if (typeof(T).Equals(typeof(Actor)))
             {
-
+                //TODO: Fill storage
             }
             else if (typeof(T).Equals(typeof(Producer)))
             {
-
+                //TODO: Fill storage
             }
             else if (typeof(T).Equals(typeof(Movie)))
             {
-
+                //TODO: Fill storage
             }
             else if (typeof(T).Equals(typeof(ActorMovie)))
             {
-
+                //TODO: Fill storage
             }
             return new Exception("Invalid type");
         }
