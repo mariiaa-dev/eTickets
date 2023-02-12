@@ -23,5 +23,7 @@ namespace eTickets.Persistence.Context
 
             base.OnModelCreating(modelBuilder);
         }
+
+        void IAppDbContext.SaveChanges() => SaveChanges();
     }
 }

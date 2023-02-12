@@ -10,5 +10,7 @@ namespace eTickets.Application.Context
         public DbSet<Movie> Movies { get; set; }
         public DbSet<ActorMovie> ActorMovies { get; set; }
         public DbSet<Producer> Producers { get; set; }
+
+        void SaveChanges();
     }
 }

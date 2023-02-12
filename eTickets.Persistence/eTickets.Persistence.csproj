@@ -21,6 +21,7 @@
   <ItemGroup>
     <ProjectReference Include="..\eTickets.Application\eTickets.Application.csproj" />
     <ProjectReference Include="..\eTickets.Domains\eTickets.Domains.csproj" />
+    <ProjectReference Include="..\eTickets.Initializer\eTickets.Initializer.csproj" />
   </ItemGroup>
 
 </Project>

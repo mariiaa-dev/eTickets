@@ -13,9 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eTickets.Persistence", "eTi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eTickets.Application", "eTickets.Application\eTickets.Application.csproj", "{FA78AB49-D5EF-457D-96F4-C4FD06DDF896}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eTickets.Initializer", "eTickets.Initializer\eTickets.Initializer.csproj", "{E3F5B9E3-6993-4FBC-B842-567FEFBEC75C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eTickets.Initializer", "eTickets.Initializer\eTickets.Initializer.csproj", "{E3F5B9E3-6993-4FBC-B842-567FEFBEC75C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eTickets.Seed", "eTickets.Seed\eTickets.Seed.csproj", "{AEE31152-5A75-452D-A047-39EF861DFE8B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eTickets.SeedStorage", "eTickets.Seed\eTickets.SeedStorage.csproj", "{AEE31152-5A75-452D-A047-39EF861DFE8B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{6D740A28-59E3-478D-AA73-F58E3F34E6ED}"
 EndProject

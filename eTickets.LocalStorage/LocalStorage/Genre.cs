@@ -5,6 +5,7 @@
         Action = 1,
         Comedy,
         Darma,
-        Documentary
+        Documentary,
+        Cartoon
     }
 }
