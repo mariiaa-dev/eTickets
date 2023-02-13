@@ -1,7 +1,7 @@
 ﻿using eTickets.Domains.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace eTickets.Application.Context
+namespace eTickets.Persistence.Context.Interfaces
 {
     public interface IAppDbContext
     {

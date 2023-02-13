@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\eTickets.Domains\eTickets.Domains.csproj" />
+    <ProjectReference Include="..\eTickets.Persistence\eTickets.Persistence.csproj" />
   </ItemGroup>
 
 </Project>

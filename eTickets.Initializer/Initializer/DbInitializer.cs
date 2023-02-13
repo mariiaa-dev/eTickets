@@ -1,5 +1,5 @@
-﻿using eTickets.Application.Context;
-using eTickets.Domains.Models;
+﻿using eTickets.Domains.Models;
+using eTickets.Persistence.Context.Interfaces;
 using eTickets.SeedStorage.Storage;
 
 namespace eTickets.Initializer.Initializer
