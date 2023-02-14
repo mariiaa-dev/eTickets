@@ -2,7 +2,7 @@
 
 namespace eTickets.Application.Services.Interfaces
 {
-    internal interface IActorService
+    public interface IActorService
     {
         Task<List<Actor>> GetActorsListAsync(CancellationToken cancellationToken);
     }

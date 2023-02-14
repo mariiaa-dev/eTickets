@@ -1,4 +1,6 @@
 ﻿using eTickets.Persistence.Context;
+using eTickets.Persistence.Repository;
+using eTickets.Persistence.Repository.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -16,6 +18,10 @@ namespace eTickets.Persistence.DependencyInjections
 
             services.AddDbContext<AppDbContext>(options =>
             options.UseSqlServer(config.GetConnectionString("DefaultConnection")));
+
+            services.AddScoped<IActorRepository, ActorRepository>();
+            services.AddScoped<IProducerRepository, ProducerRepository>();
+            services.AddScoped<ICinemaRepository, CinemaRepository>();
 
             return services;
         }
