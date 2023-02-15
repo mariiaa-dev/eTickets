@@ -2,7 +2,7 @@
 
 namespace eTickets.Persistence.Repository.Interfaces
 {
-    internal interface IProducerRepository
+    public interface IProducerRepository
     {
         Task<List<Producer>> GetProducersListAsync(CancellationToken cancellationToken);
     }

@@ -9,10 +9,10 @@ namespace eTickets.Controllers
 
         public CinemaController(ICinemaService cinemaService) => _cinemaService = cinemaService;
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
             CancellationToken _cancellationToken = HttpContext.RequestAborted;
-            var service = _cinemaService.GetCinemasListAsync(_cancellationToken);
+            var service = await _cinemaService.GetCinemasListAsync(_cancellationToken);
 
             return View();
         }

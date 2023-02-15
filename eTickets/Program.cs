@@ -1,3 +1,4 @@
+using CustomMiddleware.UnhandledExceptions.Extensions;
 using eTickets.Application.DependencyInjections;
 using eTickets.Initializer.DependencyInjections;
 using eTickets.Persistence.DependencyInjections;
@@ -25,6 +26,8 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+
+app.UseCustomExceptionHandler();
 
 app.UseRouting();  
 
