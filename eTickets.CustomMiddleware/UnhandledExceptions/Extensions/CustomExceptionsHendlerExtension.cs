@@ -1,6 +1,7 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using eTicketsCustomMiddleware.UnhandledExceptions;
+using Microsoft.AspNetCore.Builder;
 
-namespace CustomMiddleware.UnhandledExceptions.Extensions
+namespace eTicketsCustomMiddleware.UnhandledExceptions.Extensions
 {
     public static class CustomExceptionHandlerMiddlewareExtensions
     {
