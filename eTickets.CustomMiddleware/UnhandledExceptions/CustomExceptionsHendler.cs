@@ -43,6 +43,10 @@ namespace eTicketsCustomMiddleware.UnhandledExceptions
                     statusCode = HttpStatusCode.InternalServerError;
                     result = JsonSerializer.Serialize(sqlException.Message);
                     break;
+                case InvalidOperationException invalidOperationException:
+                    statusCode = HttpStatusCode.BadRequest;
+                    result = JsonSerializer.Serialize(invalidOperationException.Message);
+                    break;
             }
 
             context.Response.ContentType = "application/json";

@@ -1,7 +1,7 @@
-using CustomMiddleware.UnhandledExceptions.Extensions;
 using eTickets.Application.DependencyInjections;
 using eTickets.Initializer.DependencyInjections;
 using eTickets.Persistence.DependencyInjections;
+using eTicketsCustomMiddleware.UnhandledExceptions.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 

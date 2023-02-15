@@ -22,6 +22,7 @@ namespace eTickets.Persistence.DependencyInjections
             services.AddScoped<IActorRepository, ActorRepository>();
             services.AddScoped<IProducerRepository, ProducerRepository>();
             services.AddScoped<ICinemaRepository, CinemaRepository>();
+            services.AddScoped<IMovieRepository, MovieRepository>();
 
             return services;
         }

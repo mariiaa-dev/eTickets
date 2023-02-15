@@ -11,6 +11,7 @@ namespace eTickets.Application.DependencyInjections
             services.AddScoped<IActorService, ActorService>();
             services.AddScoped<IProducerService, ProducerService>();
             services.AddScoped<ICinemaService, CinemaService>();
+            services.AddScoped<IMovieService, MovieService>();
 
             return services;
         }

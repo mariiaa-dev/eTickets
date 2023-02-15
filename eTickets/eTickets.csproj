@@ -22,8 +22,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CustomMiddleware\CustomMiddleware.csproj" />
     <ProjectReference Include="..\eTickets.Application\eTickets.Application.csproj" />
+    <ProjectReference Include="..\eTickets.CustomMiddleware\eTickets.CustomMiddleware.csproj" />
     <ProjectReference Include="..\eTickets.Initializer\eTickets.Initializer.csproj" />
     <ProjectReference Include="..\eTickets.Persistence\eTickets.Persistence.csproj" />
   </ItemGroup>
