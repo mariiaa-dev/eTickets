@@ -7,14 +7,13 @@ namespace eTickets.Controllers
     {
         private readonly IActorService _actorService;
 
-
         public ActorController(IActorService actorService) => _actorService = actorService;
 
         public async Task<IActionResult> Index()
         {
             CancellationToken _cancellationToken = HttpContext.RequestAborted;
-            var service = await _actorService.GetActorsListAsync(_cancellationToken);
-            return View();
+            var model = await _actorService.GetActorsListAsync(_cancellationToken);
+            return View(model);
         }
     }
 }

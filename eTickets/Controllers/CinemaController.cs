@@ -12,9 +12,9 @@ namespace eTickets.Controllers
         public async Task<IActionResult> Index()
         {
             CancellationToken _cancellationToken = HttpContext.RequestAborted;
-            var service = await _cinemaService.GetCinemasListAsync(_cancellationToken);
+            var model = await _cinemaService.GetCinemasListAsync(_cancellationToken);
 
-            return View();
+            return View(model);
         }
     }
 }
