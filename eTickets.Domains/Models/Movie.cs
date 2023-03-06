@@ -9,9 +9,14 @@ namespace eTickets.Domains.Models
         [Key]
         public int Id { get; set; }
 
+        [Display(Name="Name")]
         public string? Name { get; set; }
+
+        [Display(Name = "Description")]
         public string? Description { get; set; }
         public double Price { get; set; }
+
+        [Display(Name = "Image")]
         public string? ImageURL { get; set; }
         public DateTime DateStart { get; set; }
         public DateTime DateEnd { get; set; }

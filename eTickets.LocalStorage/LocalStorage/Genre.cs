@@ -4,7 +4,7 @@
     {
         Action = 1,
         Comedy,
-        Darma,
+        Drama,
         Documentary,
         Cartoon
     }

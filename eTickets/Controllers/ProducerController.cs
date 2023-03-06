@@ -11,9 +11,9 @@ namespace eTickets.Controllers
 
         public async Task<IActionResult> Index()
         {
-            CancellationToken _cancellationToken = HttpContext.RequestAborted;
+            CancellationToken cancellationToken = HttpContext.RequestAborted;
             var model =
-                await _produserService.GetProducersListAsync(_cancellationToken);
+                await _produserService.GetProducersListAsync(cancellationToken);
             return View(model);
         }
     }

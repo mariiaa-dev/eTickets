@@ -13,7 +13,7 @@ namespace eTickets.Persistence.Repository
 
         public Task<List<Movie>> GetMoviesListAsync(CancellationToken cancellationToken)
         {
-            return _context.Movies.ToListAsync(cancellationToken);
+            return _context.Movies.Include(c => c.Cinema).ToListAsync(cancellationToken);
         }
     }
 }

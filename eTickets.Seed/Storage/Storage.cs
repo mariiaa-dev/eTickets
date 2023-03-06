@@ -165,7 +165,7 @@ namespace eTickets.SeedStorage.Storage
                         DateEnd = DateTime.Now.AddDays(-2),
                         CinemaId = 4,
                         ProducerId = 5,
-                        Genre = Genre.Darma
+                        Genre = Genre.Drama
                     },
                     new Movie
                     {
