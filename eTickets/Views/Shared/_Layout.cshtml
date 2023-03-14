@@ -29,11 +29,10 @@
 
                         <div class="dropdown show">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-                               role="button" data-toggle="dropdown" aria-haspopup="true"
-                               aria-expanded="false">
+                               role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="bi bi-gear"></i>
                                 Management
-                            </a>
+                            </a>                            
 
                             <div class="dropdown-menu showing" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" asp-controller="Cinema" asp-action="Index">
@@ -53,12 +52,13 @@
                             </div>
                         </div>
                     </div>
-                    <form class="form-check-inline my-2 my-lg-0" asp-controller="Movie" asp-action="Filter"
-                          style="padding-right: 25px">
-                        <input name="searchString" type="text" class="form-control" placeholder="Search for a movie..." />
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="position:absolute;top:9px;right:8px">
-                            <i class="bi bi-search"></i>
-                        </button>
+                    <form class="form-inline my-2 my-lg-0 justify-content-end" asp-controller="Movie" asp-action="Filter">
+                        <div class="input-group">
+                            <input class="form-control mr-sm-2" type="text" name="searchString" placeholder="Search for a movie..." aria-label="Search">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+                                <i class="bi bi-search"></i>
+                            </button>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -74,7 +74,8 @@
         <div class="container">
         </div>
     </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <s src="~/lib/jquery/dist/jquery.min.js"></s
+        cript>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
