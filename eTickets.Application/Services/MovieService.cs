@@ -10,9 +10,9 @@ namespace eTickets.Application.Services
 
         public MovieService(IMovieRepository movieRepository) => _movieRepository = movieRepository;
 
-        public Task<List<Movie>> GetMoviesListAsync(CancellationToken cancellationToken)
+        public Task<List<Movie>> GetAllListAsync(CancellationToken cancellationToken)
         {
-            return _movieRepository.GetMoviesListAsync(cancellationToken);
+            return _movieRepository.GetAllListAsync(cancellationToken);
         }
     }
 }

@@ -4,6 +4,6 @@ namespace eTickets.Application.Services.Interfaces
 {
     public interface IProducerService
     {
-        Task<List<Producer>> GetProducersListAsync(CancellationToken cancellationToken);
+        Task<List<Producer>> GetAllListAsync(CancellationToken cancellationToken);
     }
 }

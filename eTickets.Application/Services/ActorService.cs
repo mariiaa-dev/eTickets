@@ -10,9 +10,29 @@ namespace eTickets.Application.Services
 
         public ActorService(IActorRepository actorRepository) => _actorRepository = actorRepository;
 
-        public Task<List<Actor>> GetActorsListAsync(CancellationToken cancellationToken)
+        public Task AddAsync(Actor actor, CancellationToken cancellationToken)
         {
-            return _actorRepository.GetActorsListAsync(cancellationToken);
+            throw new NotImplementedException();
+        }
+
+        public Task DeleteAsync(int id, CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<List<Actor>> GetAllListAsync(CancellationToken cancellationToken)
+        {
+            return _actorRepository.GetAllListAsync(cancellationToken);
+        }
+
+        public Task<Actor> GetByIdAsync(int id, CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Actor> UpdateAsync(int id, Actor newActor, CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
         }
     }
 }

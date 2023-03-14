@@ -13,7 +13,7 @@ namespace eTickets.Controllers
         {
             CancellationToken cancellationToken = HttpContext.RequestAborted;
             var model =
-                await _produserService.GetProducersListAsync(cancellationToken);
+                await _produserService.GetAllListAsync(cancellationToken);
             return View(model);
         }
     }

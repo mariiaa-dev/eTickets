@@ -4,6 +4,6 @@ namespace eTickets.Persistence.Repository.Interfaces
 {
     public interface ICinemaRepository
     {
-        Task<List<Cinema>> GetCinemasListAsync(CancellationToken cancellationToken);
+        Task<List<Cinema>> GetAllListAsync(CancellationToken cancellationToken);
     }
 }

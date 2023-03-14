@@ -11,7 +11,7 @@ namespace eTickets.Persistence.Repository
 
         public ProducerRepository(IAppDbContext context) => _context = context;
 
-        public Task<List<Producer>> GetProducersListAsync(CancellationToken cancellationToken)
+        public Task<List<Producer>> GetAllListAsync(CancellationToken cancellationToken)
         {
             return _context.Producers.ToListAsync(cancellationToken);
         }

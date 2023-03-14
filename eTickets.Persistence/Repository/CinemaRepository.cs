@@ -11,7 +11,7 @@ namespace eTickets.Persistence.Repository
 
         public CinemaRepository(AppDbContext context) => _context = context;
 
-        public Task<List<Cinema>> GetCinemasListAsync(CancellationToken cancellationToken)
+        public Task<List<Cinema>> GetAllListAsync(CancellationToken cancellationToken)
         {
             return _context.Cinemas.ToListAsync(cancellationToken);
         }

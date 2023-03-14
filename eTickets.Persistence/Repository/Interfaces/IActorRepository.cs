@@ -5,6 +5,6 @@ namespace eTickets.Persistence.Repository.Interfaces
 {
     public interface IActorRepository
     {
-        Task<List<Actor>> GetActorsListAsync(CancellationToken cancellationToken);
+        Task<List<Actor>> GetAllListAsync(CancellationToken cancellationToken);
     }
 }

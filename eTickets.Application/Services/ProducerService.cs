@@ -10,9 +10,9 @@ namespace eTickets.Application.Services
 
         public ProducerService(IProducerRepository producerReposiory) => _producerReposiory = producerReposiory;
 
-        public Task<List<Producer>> GetProducersListAsync(CancellationToken cancellationToken)
+        public Task<List<Producer>> GetAllListAsync(CancellationToken cancellationToken)
         {
-            return _producerReposiory.GetProducersListAsync(cancellationToken);
+            return _producerReposiory.GetAllListAsync(cancellationToken);
         }
     }
 }

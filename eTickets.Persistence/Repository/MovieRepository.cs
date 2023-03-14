@@ -11,7 +11,7 @@ namespace eTickets.Persistence.Repository
 
         public MovieRepository(IAppDbContext context) => _context = context;
 
-        public Task<List<Movie>> GetMoviesListAsync(CancellationToken cancellationToken)
+        public Task<List<Movie>> GetAllListAsync(CancellationToken cancellationToken)
         {
             return _context.Movies.Include(c => c.Cinema).ToListAsync(cancellationToken);
         }

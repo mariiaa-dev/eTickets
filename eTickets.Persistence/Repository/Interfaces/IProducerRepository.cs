@@ -4,6 +4,6 @@ namespace eTickets.Persistence.Repository.Interfaces
 {
     public interface IProducerRepository
     {
-        Task<List<Producer>> GetProducersListAsync(CancellationToken cancellationToken);
+        Task<List<Producer>> GetAllListAsync(CancellationToken cancellationToken);
     }
 }

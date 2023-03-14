@@ -11,7 +11,7 @@ namespace eTickets.Persistence.Repository
 
         public ActorRepository(IAppDbContext context) => _context = context;
 
-        public Task<List<Actor>> GetActorsListAsync(CancellationToken cancellationToken)
+        public Task<List<Actor>> GetAllListAsync(CancellationToken cancellationToken)
         {
             return _context.Actors.ToListAsync(cancellationToken);
         }

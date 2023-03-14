@@ -4,6 +4,6 @@ namespace eTickets.Persistence.Repository.Interfaces
 {
     public interface IMovieRepository
     {
-        Task<List<Movie>> GetMoviesListAsync(CancellationToken cancellationToken);
+        Task<List<Movie>> GetAllListAsync(CancellationToken cancellationToken);
     }
 }
