@@ -15,5 +15,13 @@ namespace eTickets.Controllers
             var model = await _actorService.GetAllListAsync(cancellationToken);
             return View(model);
         }
+
+        //Get
+        public async Task<IActionResult> Create()
+        {
+            CancellationToken cancellationToken = HttpContext.RequestAborted;
+            return View();
+        }
     }
 }
+ 

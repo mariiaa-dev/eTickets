@@ -1,4 +1,4 @@
-﻿using eTickets.LocalStorage.LocalStorage;
+﻿using eTickets.Domains.Models.Enums;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 

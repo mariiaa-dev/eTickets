@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace eTickets.Domains.Models.BaseModels
+namespace eTickets.Domains.Models.Base
 {
     public class MovieParticipant
     {

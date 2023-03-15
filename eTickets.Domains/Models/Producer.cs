@@ -1,4 +1,4 @@
-﻿using eTickets.Domains.Models.BaseModels;
+﻿using eTickets.Domains.Models.Base;
 using System.ComponentModel.DataAnnotations;
 
 namespace eTickets.Domains.Models

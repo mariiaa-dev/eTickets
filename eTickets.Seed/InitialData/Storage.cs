@@ -1,7 +1,7 @@
 ﻿using eTickets.Domains.Models;
-using eTickets.LocalStorage.LocalStorage;
+using eTickets.Domains.Models.Enums;
 
-namespace eTickets.SeedStorage.Storage
+namespace eTickets.SeedStorage.InitialData
 {
     public static class Storage
     {

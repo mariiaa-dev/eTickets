@@ -6,8 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\eTickets.LocalStorage\eTickets.LocalStorage.csproj" />
-  </ItemGroup>
-
 </Project>
