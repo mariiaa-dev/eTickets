@@ -1,0 +1,7 @@
+{
+  "profiles": {
+    "eTickets.Persistence": {
+      "commandName": "Project"
+    }
+  }
+}
