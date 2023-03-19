@@ -1,41 +1,47 @@
 ﻿using eTickets.Domains.Models;
-using eTickets.Persistence.Context.Interfaces;
+using eTickets.Persistence.Context;
+using eTickets.Persistence.Repository.Interfaces;
 using eTickets.SeedStorage.InitialData;
 
 namespace eTickets.Initializer.Initializer
 {
     public class DbInitializer
     {
-        private readonly IAppDbContext _context;
+        private readonly AppDbContext _context;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public DbInitializer(IAppDbContext context) => _context = context;
+        public DbInitializer(AppDbContext context, IUnitOfWork unitOfWork)
+        {
+            _context = context;
+            _unitOfWork = unitOfWork;
+        }
 
-        public void Initialize()
+        public async Task InitializeAsync(CancellationToken cancellationToken)
         {
             if (!_context.Cinemas.Any())
             {
                 _context.Cinemas.AddRange(Storage.Seed<Cinema>());
-                _context.SaveChanges();
+                await _unitOfWork.SaveChangesAsync(cancellationToken);
             }
             if (!_context.Actors.Any())
             {
                 _context.Actors.AddRange(Storage.Seed<Actor>());
-                _context.SaveChanges();
+                await _unitOfWork.SaveChangesAsync(cancellationToken);
             }
             if (!_context.Producers.Any())
             {
                 _context.Producers.AddRange(Storage.Seed<Producer>());
-                _context.SaveChanges();
+                await _unitOfWork.SaveChangesAsync(cancellationToken);
             }
             if (!_context.Movies.Any())
             {
                 _context.Movies.AddRange(Storage.Seed<Movie>());
-                _context.SaveChanges();
+                await _unitOfWork.SaveChangesAsync(cancellationToken);
             }
             if (!_context.ActorMovies.Any())
             {
                 _context.ActorMovies.AddRange(Storage.Seed<ActorMovie>());
-                _context.SaveChanges();
+                await _unitOfWork.SaveChangesAsync(cancellationToken);
             }
         }
     }

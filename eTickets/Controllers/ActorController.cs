@@ -16,7 +16,7 @@ namespace eTickets.Controllers
             return View(model);
         }
 
-        //Get
+        //Get: Actors/Create
         public async Task<IActionResult> Create()
         {
             CancellationToken cancellationToken = HttpContext.RequestAborted;

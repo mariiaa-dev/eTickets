@@ -1,7 +1,7 @@
 ﻿using eTickets.Initializer.Initializer;
-using eTickets.Persistence.Context.Interfaces;
-using eTickets.Persistence.Context;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 
 namespace eTickets.Initializer.DependencyInjections
 {
@@ -9,12 +9,13 @@ namespace eTickets.Initializer.DependencyInjections
     {
         public static IServiceCollection Initialize(this IServiceCollection services)
         {
-            services.AddScoped<IAppDbContext, AppDbContext>()
-                .AddScoped<DbInitializer>();
+            services.AddScoped<DbInitializer>();
+
+            var httpContextAccessor = services.BuildServiceProvider().GetService<IHttpContextAccessor>();
 
             services.BuildServiceProvider()
                 .GetService<DbInitializer>()
-                ?.Initialize();
+                ?.InitializeAsync(httpContextAccessor?.HttpContext?.RequestAborted ?? CancellationToken.None);
 
             return services;
         }

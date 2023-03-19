@@ -1,11 +1,10 @@
 ﻿using eTickets.Domains.Models;
-using eTickets.Persistence.Context.Interfaces;
 using eTickets.Persistence.ModelTypeConfigurations;
 using Microsoft.EntityFrameworkCore;
 
 namespace eTickets.Persistence.Context
 {
-    public class AppDbContext : DbContext, IAppDbContext
+    public class AppDbContext : DbContext
     {
         public DbSet<Cinema> Cinemas { get; set; }
         public DbSet<Actor> Actors { get; set; }
@@ -23,7 +22,5 @@ namespace eTickets.Persistence.Context
 
             base.OnModelCreating(modelBuilder);
         }
-
-        void IAppDbContext.SaveChanges() => SaveChanges();
     }
 }

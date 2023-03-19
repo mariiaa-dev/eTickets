@@ -12,8 +12,8 @@ using eTickets.Persistence.Context;
 namespace eTickets.Persistence.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230210002526_Initial")]
-    partial class Initial
+    [Migration("20230319145439_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

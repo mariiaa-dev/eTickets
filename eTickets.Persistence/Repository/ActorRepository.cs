@@ -1,5 +1,5 @@
 ﻿using eTickets.Domains.Models;
-using eTickets.Persistence.Context.Interfaces;
+using eTickets.Persistence.Context;
 using eTickets.Persistence.Repository.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
@@ -7,9 +7,9 @@ namespace eTickets.Persistence.Repository
 {
     internal class ActorRepository : IActorRepository
     {
-        private readonly IAppDbContext _context;
+        private readonly AppDbContext _context;
 
-        public ActorRepository(IAppDbContext context) => _context = context;
+        public ActorRepository(AppDbContext context) => _context = context;
 
         public Task<List<Actor>> GetAllListAsync(CancellationToken cancellationToken)
         {

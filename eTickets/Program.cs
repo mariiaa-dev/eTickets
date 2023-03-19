@@ -1,9 +1,11 @@
 using eTickets.Application.DependencyInjections;
-using eTickets.Initializer.DependencyInjections;
 using eTickets.Persistence.DependencyInjections;
 using eTickets.Extensions.Middleware.UnhandledExceptions.Extensions;
+using eTickets.Initializer.DependencyInjections;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
 var path = Directory.GetCurrentDirectory() + "\\" + "appsettings.json";
 builder.Services.AddPersistence(path);
@@ -14,7 +16,7 @@ builder.Services.Initialize();
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-var app = builder.Build();
+WebApplication? app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -22,7 +24,7 @@ if (!app.Environment.IsDevelopment())
     app.UseExceptionHandler("/Home/Error");
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
-}
+} 
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
