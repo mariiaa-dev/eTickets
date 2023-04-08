@@ -24,8 +24,11 @@
   <ItemGroup>
     <ProjectReference Include="..\eTickets.Application\eTickets.Application.csproj" />
     <ProjectReference Include="..\eTickets.CustomMiddleware\eTickets.CustomMiddleware.csproj" />
+    <ProjectReference Include="..\eTickets.Domains\eTickets.Domains.csproj" />
     <ProjectReference Include="..\eTickets.Initializer\eTickets.Initializer.csproj" />
     <ProjectReference Include="..\eTickets.Persistence\eTickets.Persistence.csproj" />
   </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties properties_4launchsettings_1json__JsonSchema="https://json.schemastore.org/micro.json" /></VisualStudio></ProjectExtensions>
 
 </Project>

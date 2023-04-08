@@ -1,5 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using eTickets.Application.Services.Interfaces;
+﻿using eTickets.Application.Services.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 
 namespace eTickets.Controllers
 {

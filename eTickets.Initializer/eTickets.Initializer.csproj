@@ -12,7 +12,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\eTickets.Application\eTickets.Application.csproj" />
     <ProjectReference Include="..\eTickets.Persistence\eTickets.Persistence.csproj" />
     <ProjectReference Include="..\eTickets.SeedStorage\eTickets.SeedStorage.csproj" />
   </ItemGroup>

@@ -1,7 +1,6 @@
 ﻿using eTickets.Initializer.Initializer;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 
 namespace eTickets.Initializer.DependencyInjections
 {

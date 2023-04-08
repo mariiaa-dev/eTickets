@@ -1,7 +1,7 @@
 using eTickets.Application.DependencyInjections;
-using eTickets.Persistence.DependencyInjections;
 using eTickets.Extensions.Middleware.UnhandledExceptions.Extensions;
 using eTickets.Initializer.DependencyInjections;
+using eTickets.Persistence.DependencyInjections;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,7 +16,7 @@ builder.Services.Initialize();
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-WebApplication? app = builder.Build();
+var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
