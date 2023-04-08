@@ -19,8 +19,8 @@ namespace eTickets.Controllers
         public async Task<IActionResult> Index()
         {
             CancellationToken cancellationToken = HttpContext.RequestAborted;
-            var actor = await _actorService.GetAllListAsync(cancellationToken);
-            var model = _mapper.Map<List<ActorViewModel>>(actor);
+            var actors = await _actorService.GetAllListAsync(cancellationToken);
+            var model = _mapper.Map<List<ActorViewModel>>(actors);
             return View(model);
         }
 
