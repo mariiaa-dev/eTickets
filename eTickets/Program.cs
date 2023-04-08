@@ -1,6 +1,7 @@
 using eTickets.Application.DependencyInjections;
 using eTickets.Extensions.Middleware.UnhandledExceptions.Extensions;
 using eTickets.Initializer.DependencyInjections;
+using eTickets.Mapping;
 using eTickets.Persistence.DependencyInjections;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,6 +13,8 @@ builder.Services.AddPersistence(path);
 
 builder.Services.AddServices();
 builder.Services.Initialize();
+
+builder.Services.AddAutoMapper(typeof(DomainModelToViewModelProfile));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
