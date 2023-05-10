@@ -8,19 +8,19 @@ namespace eTickets.Controllers
     public class ProducerController : Controller
     {
         private readonly IMapper _mapper;
-        private readonly IProducerService _produserService;
+        private readonly IProducerService _service;
 
-        public ProducerController(IMapper mapper, IProducerService produserService)
+        public ProducerController(IMapper mapper, IProducerService service)
         {
             _mapper = mapper;
-            _produserService = produserService;
+            _service = service;
         }
 
         public async Task<IActionResult> Index()
         {
             CancellationToken cancellationToken = HttpContext.RequestAborted;
             var producers =
-                await _produserService.GetAllListAsync(cancellationToken);
+                await _service.GetAllListAsync(cancellationToken);
             var model = _mapper.Map<List<ProducerViewModel>>(producers);
 
             return View(model);

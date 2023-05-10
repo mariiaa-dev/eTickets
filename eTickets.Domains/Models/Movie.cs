@@ -1,15 +1,16 @@
-﻿using eTickets.Domains.Models.Enums;
+﻿using eTickets.Domains.Models.Base;
+using eTickets.Domains.Models.Enums;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace eTickets.Domains.Models
 {
-    public class Movie
+    public class Movie : IEntityBase
     {
         [Key]
         public int Id { get; set; }
 
-        [Display(Name="Name")]
+        [Display(Name = "Name")]
         public string? Name { get; set; }
 
         [Display(Name = "Description")]
@@ -27,7 +28,7 @@ namespace eTickets.Domains.Models
 
         public int CinemaId { get; set; }
         [ForeignKey("CinemaId")]
-        public Cinema? Cinema { get; set;}
+        public Cinema? Cinema { get; set; }
 
         public int ProducerId { get; set; }
         [ForeignKey("ProducerId")]

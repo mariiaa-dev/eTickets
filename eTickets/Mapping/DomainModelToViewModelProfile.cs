@@ -9,6 +9,7 @@ namespace eTickets.Mapping
         public DomainModelToViewModelProfile()
         {
             CreateMap<Actor, ActorViewModel>();
+            CreateMap<Actor, ActorWithIdViewModel>();
             CreateMap<Cinema, CinemaViewModel>();
             CreateMap<Movie, MovieViewModel>();
             CreateMap<Producer, ProducerViewModel>();

@@ -1,9 +1,9 @@
 ﻿using eTickets.Domains.Models;
+using eTickets.Persistence.Repository.Interfaces.Base;
 
 namespace eTickets.Application.Services.Interfaces
 {
-    public interface IMovieService
+    public interface IMovieService : IEntityBaseRepository<Movie>
     {
-        Task<List<Movie>> GetAllListAsync(CancellationToken cancellationToken);
     }
 }

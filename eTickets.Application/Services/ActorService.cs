@@ -1,38 +1,38 @@
 ﻿using eTickets.Application.Services.Interfaces;
 using eTickets.Domains.Models;
-using eTickets.Persistence.Repository.Interfaces;
+using eTickets.Persistence.Repository.Interfaces.Base;
 
 namespace eTickets.Application.Services
 {
     internal class ActorService : IActorService
     {
-        private readonly IActorRepository _actorRepository;
+        private readonly IEntityBaseRepository<Actor> _repository;
 
-        public ActorService(IActorRepository actorRepository) => _actorRepository = actorRepository;
+        public ActorService(IEntityBaseRepository<Actor> actorRepository) => _repository = actorRepository;
 
-        public Task AddAsync(Actor actor, CancellationToken cancellationToken)
+        public async Task AddAsync(Actor actor, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            await _repository.AddAsync(actor, cancellationToken);
         }
 
-        public Task DeleteAsync(int id, CancellationToken cancellationToken)
+        public async Task DeleteAsync(int id, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            await _repository.DeleteAsync(id, cancellationToken);
         }
 
         public Task<List<Actor>> GetAllListAsync(CancellationToken cancellationToken)
         {
-            return _actorRepository.GetAllListAsync(cancellationToken);
+            return _repository.GetAllListAsync(cancellationToken);
         }
 
-        public Task<Actor> GetByIdAsync(int id, CancellationToken cancellationToken)
+        public async Task<Actor?> GetByIdAsync(int id, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            return await _repository.GetByIdAsync(id, cancellationToken);
         }
 
-        public Task<Actor> UpdateAsync(int id, Actor newActor, CancellationToken cancellationToken)
+        public async Task<Actor> UpdateAsync(int id, Actor newActor, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            return await _repository.UpdateAsync(id, newActor, cancellationToken);
         }
     }
 }

@@ -1,9 +1,13 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using eTickets.Domains.Models.Base;
 
-namespace eTickets.Domains.Models.Base
+namespace eTickets.Domains.Models.Common
 {
-    public class MovieParticipant
+    public class MovieParticipant : IEntityBase
     {
+        [Key]
+        public int Id { get; set; }
+
         [Display(Name = "Profile Picture")]
         public string? ProfilePictureURL { get; set; }
 

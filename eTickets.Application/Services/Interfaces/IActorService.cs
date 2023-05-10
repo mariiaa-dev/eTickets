@@ -1,13 +1,9 @@
 ﻿using eTickets.Domains.Models;
+using eTickets.Persistence.Repository.Interfaces.Base;
 
 namespace eTickets.Application.Services.Interfaces
 {
-    public interface IActorService
+    public interface IActorService : IEntityBaseRepository<Actor>
     {
-        Task<List<Actor>> GetAllListAsync(CancellationToken cancellationToken);
-        Task<Actor> GetByIdAsync(int id, CancellationToken cancellationToken);
-        Task AddAsync(Actor actor, CancellationToken cancellationToken);
-        Task<Actor> UpdateAsync(int id, Actor newActor, CancellationToken cancellationToken);
-        Task DeleteAsync(int id, CancellationToken cancellationToken);
     }
 }
