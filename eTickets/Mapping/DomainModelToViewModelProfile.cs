@@ -13,6 +13,7 @@ namespace eTickets.Mapping
             CreateMap<Cinema, CinemaViewModel>();
             CreateMap<Movie, MovieViewModel>();
             CreateMap<Producer, ProducerViewModel>();
+            CreateMap<Producer, ProducerWithIdViewModel>();
         }
     }
 }

@@ -10,9 +10,9 @@ namespace eTickets.Application.Services
 
         public ActorService(IEntityBaseRepository<Actor> actorRepository) => _repository = actorRepository;
 
-        public async Task AddAsync(Actor actor, CancellationToken cancellationToken)
+        public async Task AddAsync(Actor entity, CancellationToken cancellationToken)
         {
-            await _repository.AddAsync(actor, cancellationToken);
+            await _repository.AddAsync(entity, cancellationToken);
         }
 
         public async Task DeleteAsync(int id, CancellationToken cancellationToken)
@@ -30,9 +30,9 @@ namespace eTickets.Application.Services
             return await _repository.GetByIdAsync(id, cancellationToken);
         }
 
-        public async Task<Actor> UpdateAsync(int id, Actor newActor, CancellationToken cancellationToken)
+        public async Task<Actor> UpdateAsync(int id, Actor entity, CancellationToken cancellationToken)
         {
-            return await _repository.UpdateAsync(id, newActor, cancellationToken);
+            return await _repository.UpdateAsync(id, entity, cancellationToken);
         }
     }
 }

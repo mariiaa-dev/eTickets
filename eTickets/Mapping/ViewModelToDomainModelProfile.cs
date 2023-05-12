@@ -10,6 +10,8 @@ namespace eTickets.Mapping
         {
             CreateMap<ActorViewModel, Actor>();
             CreateMap<ActorWithIdViewModel, Actor>();
+            CreateMap<ProducerViewModel, Producer>();
+            CreateMap<ProducerWithIdViewModel, Producer>();
         }
     }
 }

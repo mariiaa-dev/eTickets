@@ -10,14 +10,14 @@ namespace eTickets.Application.Services
 
         public ProducerService(IEntityBaseRepository<Producer> actorRepository) => _repository = actorRepository;
 
-        public Task AddAsync(Producer entity, CancellationToken cancellationToken)
+        public async Task AddAsync(Producer entity, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            await _repository.AddAsync(entity, cancellationToken);
         }
 
-        public Task DeleteAsync(int id, CancellationToken cancellationToken)
+        public async Task DeleteAsync(int id, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            await _repository.DeleteAsync(id, cancellationToken);
         }
 
         public Task<List<Producer>> GetAllListAsync(CancellationToken cancellationToken)
@@ -25,14 +25,14 @@ namespace eTickets.Application.Services
             return _repository.GetAllListAsync(cancellationToken);
         }
 
-        public Task<Producer?> GetByIdAsync(int id, CancellationToken cancellationToken)
+        public async Task<Producer?> GetByIdAsync(int id, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            return await _repository.GetByIdAsync(id, cancellationToken);
         }
 
-        public Task<Producer> UpdateAsync(int id, Producer entity, CancellationToken cancellationToken)
+        public async Task<Producer> UpdateAsync(int id, Producer entity, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            return await _repository.UpdateAsync(id, entity, cancellationToken);
         }
     }
 }

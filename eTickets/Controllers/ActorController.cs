@@ -22,97 +22,97 @@ namespace eTickets.Controllers
         {
             CancellationToken cancellationToken = HttpContext.RequestAborted;
 
-            var actors = await _service.GetAllListAsync(cancellationToken);
+            var models = await _service.GetAllListAsync(cancellationToken);
 
-            var model = _mapper.Map<List<ActorWithIdViewModel>>(actors);
+            var viewModels = _mapper.Map<List<ActorWithIdViewModel>>(models);
 
-            return View(model);
+            return View(viewModels);
         }
 
-        //Get: Actors/Create
+        //Get: Actor/Create
         public IActionResult Create()
         {
             return View();
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(ActorViewModel model)
+        public async Task<IActionResult> Create(ActorViewModel viewModel)
         {
             CancellationToken cancellationToken = HttpContext.RequestAborted;
 
             if (!ModelState.IsValid)
             {
-                return View(model);
+                return View(viewModel);
             }
 
-            var actor = _mapper.Map<Actor>(model);
-            await _service.AddAsync(actor, cancellationToken);
+            var model = _mapper.Map<Actor>(viewModel);
+            await _service.AddAsync(model, cancellationToken);
 
             return RedirectToAction("Index");
         }
 
-        //Get: Actors/Details/1
+        //Get: Actor/Details/1
         public async Task<IActionResult> Details(int id)
         {
             CancellationToken cancellationToken = HttpContext.RequestAborted;
 
-            var actorDetails = await _service.GetByIdAsync(id, cancellationToken);
-            if (actorDetails == null)
+            var details = await _service.GetByIdAsync(id, cancellationToken);
+            if (details == null)
             {
                 return View("NotFound");
             }
 
-            var actorDetailsModel = _mapper.Map<ActorWithIdViewModel>(actorDetails);
+            var detailsModel = _mapper.Map<ActorWithIdViewModel>(details);
 
-            return View(actorDetailsModel);
+            return View(detailsModel);
         }
 
-        //Get: Actors/Edit/1
+        //Get: Actor/Edit/1
         public async Task<IActionResult> Edit(int id)
         {
             CancellationToken cancellationToken = HttpContext.RequestAborted;
 
-            var actorDetails = await _service.GetByIdAsync(id, cancellationToken);
-            if (actorDetails == null)
+            var details = await _service.GetByIdAsync(id, cancellationToken);
+            if (details == null)
             {
                 return View("NotFound");
             }
 
-            var actorDetailsModel = _mapper.Map<ActorViewModel>(actorDetails);
+            var detailsModel = _mapper.Map<ActorViewModel>(details);
 
-            return View(actorDetailsModel);
+            return View(detailsModel);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(int id, ActorWithIdViewModel model)
+        public async Task<IActionResult> Edit(int id, ActorWithIdViewModel viewModel)
         {
             CancellationToken cancellationToken = HttpContext.RequestAborted;
 
             if (!ModelState.IsValid)
             {
-                return View(model);
+                return View(viewModel);
             }
 
-            var actor = _mapper.Map<Actor>(model);
-            await _service.UpdateAsync(id, actor, cancellationToken);
+            var model = _mapper.Map<Actor>(viewModel);
+            await _service.UpdateAsync(id, model, cancellationToken);
 
             return RedirectToAction("Index");
         }
 
-        //Get: Actors/Delete/1
+        //Get: Actor/Delete/1
         public async Task<IActionResult> Delete(int id)
         {
             CancellationToken cancellationToken = HttpContext.RequestAborted;
 
-            var actorDetails = await _service.GetByIdAsync(id, cancellationToken);
-            if (actorDetails == null)
+            var details = await _service.GetByIdAsync(id, cancellationToken);
+            if (details == null)
             {
                 return View("NotFound");
             }
 
-            var actorDetailsModel = _mapper.Map<ActorWithIdViewModel>(actorDetails);
+            var detailsModel = _mapper.Map<ActorWithIdViewModel>(details);
 
-            return View(actorDetailsModel);
+            return View(detailsModel);
         }
 
         [HttpPost, ActionName("Delete")]
@@ -120,8 +120,8 @@ namespace eTickets.Controllers
         {
             CancellationToken cancellationToken = HttpContext.RequestAborted;
 
-            var actorDetails = await _service.GetByIdAsync(id, cancellationToken);
-            if (actorDetails == null)
+            var details = await _service.GetByIdAsync(id, cancellationToken);
+            if (details == null)
             {
                 return View("NotFound");
             }
